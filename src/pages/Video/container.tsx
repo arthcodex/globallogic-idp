@@ -1,12 +1,12 @@
 import HLSPlayer from '@/components/HLSPlayer/container.tsx';
 import { ReactNode, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { VideoDetails } from '@/types/video';
+import { VideoDetailsResponse } from '@/types/video';
 import { HLSPaths } from '@/types/router';
 import { getVideo, VIDEO_DIRECTORY_URL } from '@/lib/api';
 
 const Video = (): ReactNode => {
-  const [video, setVideo] = useState<VideoDetails>();
+  const [video, setVideo] = useState<VideoDetailsResponse>();
 
   const { id } = useParams();
   const navigate = useNavigate();

@@ -1,16 +1,20 @@
 import { ChangeEvent, ReactNode, useEffect, useState } from 'react';
 import { Pagination, Snackbar } from '@mui/material';
-import { VideoSummary } from '@/types/video';
 import { getVideos, uploadVideo, VIDEO_DIRECTORY_URL } from '@/lib/api';
+import { VideoDetailsResponse } from '@/types/video.ts';
 import VideoPreview from '@/components/VideoPreview/container.tsx';
 import UploadVideo from '@/components/UploadVideo/container.tsx';
+import { useNavigate } from 'react-router-dom';
+import { HLSPaths } from '@/types/router.ts';
 
 const Videos = (): ReactNode => {
   const [isErrorActive, setIsErrorActive] = useState<boolean>(false);
   const [isUploading, setIsUploading] = useState<boolean>(false);
-  const [videos, setVideos] = useState<VideoSummary[]>([]);
+  const [videos, setVideos] = useState<VideoDetailsResponse[]>([]);
   const [page, setPage] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
+
+  const navigate = useNavigate();
 
   const fetchVideos = async (page: number): Promise<void> => {
     try {
@@ -32,13 +36,13 @@ const Videos = (): ReactNode => {
     setIsUploading(true);
 
     try {
-      await uploadVideo(formData);
+      const video = await uploadVideo(formData);
+      navigate(`${HLSPaths.VIDEO}/${video._id}`);
     } catch (error) {
       setIsErrorActive(true);
     }
 
     setIsUploading(false);
-    setPage(0);
   };
 
   const handlePagination = (_: ChangeEvent<unknown>, page: number): void => {

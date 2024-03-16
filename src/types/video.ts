@@ -1,10 +1,10 @@
-export type VideoSummary = {
+export type VideoDetailsResponse = {
+  name: string;
   _id: string;
   duration: number;
-  name: string;
+  alive: boolean;
 };
 
-export type VideoDetails = {
-  name: string;
+export type VideoUploadResponse = {
   _id: string;
 };
