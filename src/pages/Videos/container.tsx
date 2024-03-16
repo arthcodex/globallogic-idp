@@ -1,6 +1,6 @@
 import { ChangeEvent, ReactNode, useEffect, useState } from 'react';
 import { Pagination, Snackbar } from '@mui/material';
-import { VideoSummary } from '@/types';
+import { VideoSummary } from '@/types/video';
 import { getVideos, uploadVideo, VIDEO_DIRECTORY_URL } from '@/lib/api';
 import VideoPreview from '@/components/VideoPreview/container.tsx';
 import UploadVideo from '@/components/UploadVideo/container.tsx';

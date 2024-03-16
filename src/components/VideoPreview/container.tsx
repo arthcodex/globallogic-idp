@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { VideoPreviewProps } from '@/components/VideoPreview/types.ts';
 import { getVideoDuration } from '@/components/VideoPreview/helpers.ts';
 import { useNavigate } from 'react-router-dom';
-import { HLSPaths } from '@/types';
+import { HLSPaths } from '@/types/router';
 
 const VideoPreview = ({
   id,

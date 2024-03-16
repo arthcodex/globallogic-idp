@@ -1,5 +1,6 @@
 import client from '@/lib/axios';
-import { PaginatedResponse, VideoDetails, VideoSummary } from '@/types';
+import { VideoDetails, VideoSummary } from '@/types/video';
+import { PaginatedResponse } from '@/types/pagination';
 
 export const VIDEO_DIRECTORY_URL = client.getUri({ url: '/public/storage/' });
 

@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { CommonPaths, HLSPaths } from '@/types';
+import { CommonPaths, HLSPaths } from '@/types/router';
 
 /* Layouts */
 const DefaultLayout = lazy(
