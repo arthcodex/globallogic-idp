@@ -6,7 +6,6 @@ export enum CommonPaths {
 export enum HLSPaths {
   VIDEOS = '/videos',
   VIDEO = `/video`,
-  UPLOAD = '/upload-video',
 }
 
 export type PaginatedResponse<T> = {

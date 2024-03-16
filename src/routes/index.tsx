@@ -28,7 +28,6 @@ const AppRoutes = () => (
         <Route path={ CommonPaths.ROOT } element={ <Navigate to={ HLSPaths.VIDEOS } /> } />
         <Route path={ HLSPaths.VIDEOS } element={ <Videos /> } />
         <Route path={ `${ HLSPaths.VIDEO }/:uuid` } element={ <Video /> } />
-        <Route path={ HLSPaths.UPLOAD } element={ <></> } />
       </Route>
       <Route
         path={ CommonPaths.NOT_FOUND }
