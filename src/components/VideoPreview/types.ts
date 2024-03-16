@@ -1,11 +1,6 @@
 export type VideoPreviewProps = {
-  uuid: string;
+  id: string;
   name: string;
   previewUrl: string;
-  length: number;
-};
-
-export type VideoLength = {
-  minutes: number;
-  seconds: number;
+  duration: number;
 };

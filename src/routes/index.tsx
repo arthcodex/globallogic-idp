@@ -22,16 +22,16 @@ const Video = lazy(
 );
 
 const AppRoutes = () => (
-  <Suspense fallback={ <LoadingLayout /> }>
+  <Suspense fallback={<LoadingLayout />}>
     <Routes>
-      <Route element={ <DefaultLayout /> }>
-        <Route path={ CommonPaths.ROOT } element={ <Navigate to={ HLSPaths.VIDEOS } /> } />
-        <Route path={ HLSPaths.VIDEOS } element={ <Videos /> } />
-        <Route path={ `${ HLSPaths.VIDEO }/:uuid` } element={ <Video /> } />
+      <Route element={<DefaultLayout />}>
+        <Route path={CommonPaths.ROOT} element={<Navigate to={HLSPaths.VIDEOS} />} />
+        <Route path={HLSPaths.VIDEOS} element={<Videos />} />
+        <Route path={`${HLSPaths.VIDEO}/:id`} element={<Video />} />
       </Route>
       <Route
-        path={ CommonPaths.NOT_FOUND }
-        element={ <Error code={ 404 } message={ 'Page not found' } /> }
+        path={CommonPaths.NOT_FOUND}
+        element={<Error code={404} message={'Page not found'} />}
       />
     </Routes>
   </Suspense>

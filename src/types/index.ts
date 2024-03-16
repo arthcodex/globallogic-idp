@@ -11,18 +11,16 @@ export enum HLSPaths {
 export type PaginatedResponse<T> = {
   totalPages: number;
   page: number;
-  items: T[];
+  data: T[];
 };
 
 export type VideoSummary = {
-  uuid: string;
-  length: number;
+  _id: string;
+  duration: number;
   name: string;
-  previewUrl: string;
 };
 
 export type VideoDetails = {
   name: string;
-  uuid: string;
-  m3u8: string;
+  _id: string;
 };

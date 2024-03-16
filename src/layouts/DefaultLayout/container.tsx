@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 const LoadingLayout = (): ReactNode => {
   return (
-    <main className={ styles.viewport }>
+    <main className={styles.viewport}>
       <Outlet />
     </main>
   );

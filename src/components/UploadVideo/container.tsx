@@ -4,7 +4,7 @@ import { UploadVideoProps } from '@/components/UploadVideo/types.ts';
 import Button from '@mui/material/Button';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
-const UploadVideo = ({ onUpload }: UploadVideoProps): ReactNode => {
+const UploadVideo = ({ onUpload, disabled = false }: UploadVideoProps): ReactNode => {
   const handleUpload = async (event: ChangeEvent): Promise<void> => {
     const [file] = (event.target as HTMLInputElement).files ?? [null];
     if (file) {
@@ -19,14 +19,16 @@ const UploadVideo = ({ onUpload }: UploadVideoProps): ReactNode => {
       component='label'
       role='button'
       variant='contained'
-      tabIndex={ -1 }
-      startIcon={ <CloudUploadIcon /> }
+      tabIndex={-1}
+      startIcon={<CloudUploadIcon />}
+      disabled={disabled}
     >
       Upload a video
       <VisuallyHiddenInput
         type='file'
         accept='video/mp4,video/x-m4v,video/*'
-        onChange={ handleUpload }
+        onChange={handleUpload}
+        disabled={disabled}
       />
     </Button>
   );

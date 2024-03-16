@@ -4,8 +4,8 @@ import { ReactNode } from 'react';
 
 const LoadingLayout = (): ReactNode => {
   return (
-    <main className={ styles.loading }>
-      <BarLoader color={ '#FFFFFF' } loading={ true } />
+    <main className={styles.loading}>
+      <BarLoader color={'#FFFFFF'} loading={true} />
     </main>
   );
 };

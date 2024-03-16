@@ -2,7 +2,7 @@ import { FC, ReactNode, useEffect, useRef, useState } from 'react';
 import { HLSPlayerProps } from '@/components/HLSPlayer/types.ts';
 import Hls, { ErrorTypes } from 'hls.js';
 
-const withHlsSupport = <T,>(component: FC<T>): FC<T> => {
+const withHlsSupport = <T, >(component: FC<T>): FC<T> => {
   return (props: T): ReactNode => {
     if (!Hls.isSupported()) {
       return <span>HLS is not supported by your browser!</span>;
@@ -48,12 +48,12 @@ const HLSPlayerComponent = ({ source, hlsConfig, ...props }: HLSPlayerProps): Re
     return () => {
       hls.destroy();
       setIsErrorOccurred(false);
-    }
+    };
   }, [hlsConfig, source, videoRef, isErrorOccurred]);
 
   return <video ref={videoRef} {...props}></video>;
 };
 
-const HLSPlayer = withHlsSupport(HLSPlayerComponent)
+const HLSPlayer = withHlsSupport(HLSPlayerComponent);
 
 export default HLSPlayer;

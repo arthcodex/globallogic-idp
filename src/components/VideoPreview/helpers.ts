@@ -1,7 +1,5 @@
-import { VideoLength } from '@/components/VideoPreview/types.ts';
-
-export const getVideoLength = (length: number): VideoLength => {
-  const minutes: number = Math.floor(length / 60);
-  const seconds: number = length % 60;
-  return { minutes, seconds };
+export const getVideoDuration = (duration: number): string => {
+  const minutes: number = Math.floor(duration / 60);
+  const seconds: number = duration % 60;
+  return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 };
