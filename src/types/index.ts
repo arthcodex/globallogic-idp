@@ -1,6 +1,5 @@
 export enum CommonPaths {
   ROOT = '/',
-  ERROR = '/error',
   NOT_FOUND = '*',
 }
 

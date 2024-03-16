@@ -30,7 +30,6 @@ const AppRoutes = () => (
         <Route path={ `${ HLSPaths.VIDEO }/:uuid` } element={ <Video /> } />
         <Route path={ HLSPaths.UPLOAD } element={ <></> } />
       </Route>
-      <Route path={ CommonPaths.ERROR } element={ <Error /> } />
       <Route
         path={ CommonPaths.NOT_FOUND }
         element={ <Error code={ 404 } message={ 'Page not found' } /> }
