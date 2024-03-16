@@ -2,7 +2,11 @@ import client from '@/lib/axios';
 import { PaginatedResponse, VideoDetails, VideoSummary } from '@/types';
 
 export const uploadVideo = async (formData: FormData): Promise<number> => {
-  const response = await client.post('/upload-video', formData);
+  const response = await client.post('/upload-video', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    }
+  });
   return response.status;
 };
 
